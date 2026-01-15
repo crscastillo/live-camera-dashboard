@@ -26,18 +26,18 @@ interface Base {
 }
 
 const activityColors: Record<string, string> = {
-  shopping: 'bg-blue-100 text-blue-800 border-blue-200',
-  meal: 'bg-orange-100 text-orange-800 border-orange-200',
-  attraction: 'bg-purple-100 text-purple-800 border-purple-200',
-  event: 'bg-red-100 text-red-800 border-red-200',
-  travel: 'bg-gray-100 text-gray-800 border-gray-200',
-  village: 'bg-green-100 text-green-800 border-green-200',
-  scenic: 'bg-teal-100 text-teal-800 border-teal-200',
-  hiking: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-  snow_play: 'bg-cyan-100 text-cyan-800 border-cyan-200',
-  transport: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-  skiing: 'bg-sky-100 text-sky-800 border-sky-200',
-  experience: 'bg-pink-100 text-pink-800 border-pink-200',
+  shopping: 'bg-gray-50 text-gray-800 border-gray-300',
+  meal: 'bg-gray-50 text-gray-800 border-gray-300',
+  attraction: 'bg-gray-50 text-gray-800 border-gray-300',
+  event: 'bg-gray-50 text-gray-800 border-gray-300',
+  travel: 'bg-gray-50 text-gray-800 border-gray-300',
+  village: 'bg-gray-50 text-gray-800 border-gray-300',
+  scenic: 'bg-gray-50 text-gray-800 border-gray-300',
+  hiking: 'bg-gray-50 text-gray-800 border-gray-300',
+  snow_play: 'bg-gray-50 text-gray-800 border-gray-300',
+  transport: 'bg-gray-50 text-gray-800 border-gray-300',
+  skiing: 'bg-gray-50 text-gray-800 border-gray-300',
+  experience: 'bg-gray-50 text-gray-800 border-gray-300',
 };
 
 const activityIcons: Record<string, string> = {
@@ -59,17 +59,25 @@ export default function AgendaPage() {
   const { trip, days } = agendaData;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <main className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <Link 
-            href="/" 
-            className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mb-4 transition-colors"
-          >
-            ← Back to Home
-          </Link>
-          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+          <div className="flex items-center justify-between mb-4">
+            <Link 
+              href="/" 
+              className="inline-flex items-center text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              ← Back to Home
+            </Link>
+            <Link 
+              href="/upload" 
+              className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium"
+            >
+              📤 Update Agenda
+            </Link>
+          </div>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
               {trip.name}
             </h1>
@@ -105,15 +113,15 @@ export default function AgendaPage() {
         {/* Days Timeline */}
         <div className="space-y-6">
           {days.map((day: Day, dayIdx: number) => (
-            <div key={day.date} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div key={day.date} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               {/* Day Header */}
-              <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-5 md:p-6">
+              <div className="bg-gray-800 text-white p-5 md:p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
                     <h2 className="text-2xl font-bold">{day.day}</h2>
-                    <p className="text-indigo-100">{day.date}</p>
+                    <p className="text-gray-300">{day.date}</p>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full">
+                  <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
                     <span className="text-xl">📍</span>
                     <span className="font-medium">{day.location}</span>
                   </div>
@@ -126,20 +134,20 @@ export default function AgendaPage() {
                   <div key={actIdx} className="relative">
                     {/* Timeline connector line */}
                     {actIdx < day.activities.length - 1 && (
-                      <div className="absolute left-[20px] md:left-[45px] top-[60px] bottom-[-16px] w-1 bg-gradient-to-b from-indigo-300 to-purple-300 z-0" />
+                      <div className="absolute left-[20px] md:left-[45px] top-[60px] bottom-[-16px] w-0.5 bg-gray-300 z-0" />
                     )}
                     
                     <div className="relative z-10 mb-4">
                       <div
-                        className={`border-2 rounded-xl p-4 md:p-5 transition-all hover:shadow-md ${
-                          activityColors[activity.type] || 'bg-gray-100 text-gray-800 border-gray-200'
+                        className={`border rounded-lg p-4 md:p-5 transition-all hover:shadow-sm ${
+                          activityColors[activity.type] || 'bg-gray-50 text-gray-800 border-gray-300'
                         }`}
                       >
                         <div className="flex flex-col md:flex-row md:items-start gap-4">
                           {/* Time & Icon */}
                           <div className="flex items-center gap-3 md:flex-col md:items-center md:gap-2 md:min-w-[80px] relative">
                             {/* Connection dot */}
-                            <div className="absolute -left-3 md:-left-[26px] top-1/2 -translate-y-1/2 w-3 h-3 bg-indigo-500 rounded-full border-2 border-white shadow-md z-20" />
+                            <div className="absolute -left-3 md:-left-[26px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-gray-800 rounded-full border-2 border-white shadow-sm z-20" />
                             
                             <span className="text-3xl relative z-10">{activityIcons[activity.type] || '📌'}</span>
                             {activity.start_time && (
