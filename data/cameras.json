@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Live Camera 1",
+    "location": "Location 1",
+    "url": "https://www.youtube.com/embed/xADCfg6Fd_s"
+  },
+  {
+    "id": "2",
+    "name": "Live Camera 2",
+    "location": "Location 2",
+    "url": "https://www.youtube.com/embed/NeKZVw6-EGg"
+  },
+  {
+    "id": "3",
+    "name": "Live Camera 3",
+    "location": "Location 3",
+    "url": "https://www.youtube.com/embed/SH63YaIWyK0"
+  },
+  {
+    "id": "4",
+    "name": "Live Camera 4",
+    "location": "Location 4",
+    "url": "https://www.youtube.com/embed/mHTTPNYltZo"
+  },
+  {
+    "id": "5",
+    "name": "Live Camera 5",
+    "location": "Location 5",
+    "url": "https://www.youtube.com/embed/2UJDLWcSADk"
+  }
+]
