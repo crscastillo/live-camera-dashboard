@@ -1,0 +1,262 @@
+{
+  "trip": {
+    "name": "Colorado Family Trip",
+    "timezone": "America/Denver",
+    "start_date": "2026-01-15",
+    "end_date": "2026-01-20",
+    "bases": [
+      {
+        "date": "2026-01-15",
+        "location": "Denver",
+        "lodging": "La Quinta Inn & Suites Denver Airport"
+      },
+      {
+        "date_range": "2026-01-16 to 2026-01-20",
+        "location": "Blue River / Breckenridge",
+        "lodging": "Airbnb"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "2026-01-15",
+      "day": "Thursday",
+      "location": "Denver",
+      "activities": [
+        {
+          "type": "shopping",
+          "title": "CINCH Store",
+          "start_time": "10:30",
+          "end_time": "11:30",
+          "location": "CINCH Store, Denver",
+          "description": "Authentic western clothing: jeans, shirts, belts.",
+          "notes": "Approx. 30 min drive from hotel."
+        },
+        {
+          "type": "shopping",
+          "title": "Boot Barn",
+          "start_time": "11:45",
+          "end_time": "12:45",
+          "location": "Boot Barn, Denver",
+          "description": "Western boots, hats, accessories for the whole family.",
+          "notes": "10–15 min drive from CINCH Store."
+        },
+        {
+          "type": "meal",
+          "title": "Lunch",
+          "start_time": "13:00",
+          "end_time": "14:00",
+          "location": "Central Denver",
+          "description": "Casual lunch (BBQ or Mexican recommended).",
+          "notes": "Flexible location depending on traffic."
+        },
+        {
+          "type": "attraction",
+          "title": "National Western Stock Show",
+          "start_time": "16:00",
+          "end_time": "18:00",
+          "location": "National Western Complex, Denver",
+          "description": "Explore barns, exhibitions, and western culture.",
+          "notes": "Arrive early to walk the grounds."
+        },
+        {
+          "type": "event",
+          "title": "Professional Rodeo",
+          "start_time": "18:00",
+          "end_time": "19:30",
+          "location": "National Western Complex, Denver",
+          "description": "Evening rodeo show.",
+          "notes": "Main event of the day."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "day": "Friday",
+      "location": "Summit County",
+      "activities": [
+        {
+          "type": "travel",
+          "title": "Drive Denver → Summit County",
+          "start_time": "10:00",
+          "end_time": "11:15",
+          "location": "Denver to Keystone/Breckenridge",
+          "description": "Mountain drive into Summit County.",
+          "notes": "Traffic and weather dependent."
+        },
+        {
+          "type": "village",
+          "title": "Keystone Village + Lunch",
+          "start_time": "11:30",
+          "end_time": "15:00",
+          "location": "Keystone River Run Village",
+          "description": "Walk village, shops, gondola base, relaxed lunch.",
+          "notes": "All activities combined in one block."
+        },
+        {
+          "type": "scenic",
+          "title": "Sapphire Point Overlook",
+          "start_time": "15:30",
+          "end_time": "16:00",
+          "location": "Dillon Reservoir",
+          "description": "Iconic scenic viewpoint over the lake.",
+          "notes": "Short stop, minimal walking."
+        },
+        {
+          "type": "shopping",
+          "title": "Walmart Frisco",
+          "start_time": "16:30",
+          "end_time": "17:30",
+          "location": "Frisco, CO",
+          "description": "Groceries and supplies for the stay.",
+          "notes": "Convenient stop before evening activity."
+        },
+        {
+          "type": "attraction",
+          "title": "Ice Castles",
+          "start_time": "18:30",
+          "end_time": "19:45",
+          "location": "Silverthorne, CO",
+          "description": "Illuminated ice castle experience.",
+          "notes": "Dress very warm; timed entry."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "day": "Saturday",
+      "location": "Breckenridge",
+      "activities": [
+        {
+          "type": "hiking",
+          "title": "Isaak Walton Trail",
+          "start_time": "10:30",
+          "end_time": "11:30",
+          "location": "Breckenridge",
+          "description": "Easy winter walk, very scenic.",
+          "notes": "Park at Stephen C. West Ice Arena (free)."
+        },
+        {
+          "type": "snow_play",
+          "title": "Carter Park Sled Hill",
+          "start_time": "11:45",
+          "end_time": "12:45",
+          "location": "Carter Park, Breckenridge",
+          "description": "Free sledding hill for kids.",
+          "notes": "Best done earlier in the day."
+        },
+        {
+          "type": "village",
+          "title": "Main Street Breckenridge + Lunch",
+          "start_time": "12:00",
+          "end_time": "13:30",
+          "location": "Main Street Breckenridge",
+          "description": "Historic walk, shops, art, cafes, lunch.",
+          "notes": "Includes Barney Ford House, Welcome Center, galleries."
+        },
+        {
+          "type": "transport",
+          "title": "Breckenridge Free Gondola",
+          "start_time": "13:45",
+          "end_time": "15:15",
+          "location": "Breckenridge",
+          "description": "Scenic gondola ride between town and Peak 8.",
+          "notes": "Ride up and explore base area."
+        },
+        {
+          "type": "village",
+          "title": "Main Street Breckenridge (Afternoon)",
+          "start_time": "15:30",
+          "end_time": "18:45",
+          "location": "Main Street Breckenridge",
+          "description": "Coffee, galleries, shopping, relaxed walking.",
+          "notes": "All walkable using Free Ride."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "day": "Sunday",
+      "location": "Breckenridge",
+      "activities": [
+        {
+          "type": "skiing",
+          "title": "Cross-Country Skiing",
+          "start_time": "10:30",
+          "end_time": "12:30",
+          "location": "Breckenridge Nordic Center",
+          "description": "Scenic Nordic skiing trails.",
+          "notes": "Rentals and lessons available."
+        },
+        {
+          "type": "meal",
+          "title": "Lunch in Breckenridge",
+          "start_time": "12:45",
+          "end_time": "14:00",
+          "location": "Main Street Breckenridge",
+          "description": "Casual lunch downtown.",
+          "notes": "Good options for families."
+        },
+        {
+          "type": "experience",
+          "title": "Two Below Zero Sleigh Ride + Hot Cocoa",
+          "start_time": "14:30",
+          "end_time": "16:00",
+          "location": "Near Breckenridge",
+          "description": "Horse-drawn sleigh ride with hot cocoa.",
+          "notes": "Highlight experience; dress warm."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "day": "Monday",
+      "location": "Frisco & Vail",
+      "activities": [
+        {
+          "type": "snow_play",
+          "title": "Frisco Adventure Park Tubing",
+          "start_time": "10:30",
+          "end_time": "11:30",
+          "location": "Frisco Adventure Park",
+          "description": "Tubing session (reserved).",
+          "notes": "Change clothes after."
+        },
+        {
+          "type": "travel",
+          "title": "Drive Frisco → Vail",
+          "start_time": "12:30",
+          "end_time": "13:45",
+          "location": "Frisco to Vail",
+          "description": "Scenic mountain drive.",
+          "notes": "Weather dependent."
+        },
+        {
+          "type": "village",
+          "title": "Vail Village & Lionshead",
+          "start_time": "14:00",
+          "end_time": "18:00",
+          "location": "Vail, CO",
+          "description": "Walk alpine village, bridges, shops, cafes.",
+          "notes": "Use free Vail shuttles between villages."
+        }
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "day": "Tuesday",
+      "location": "Departure",
+      "activities": [
+        {
+          "type": "travel",
+          "title": "Check-out and Departure",
+          "start_time": "11:00",
+          "end_time": "12:00",
+          "location": "Blue River / Breckenridge",
+          "description": "Leave Airbnb and drive toward Denver.",
+          "notes": "Allow buffer for weather."
+        }
+      ]
+    }
+  ]
+}
