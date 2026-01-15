@@ -121,44 +121,55 @@ export default function AgendaPage() {
               </div>
 
               {/* Activities */}
-              <div className="p-5 md:p-6 space-y-4">
+              <div className="p-5 md:p-6">
                 {day.activities.map((activity: Activity, actIdx: number) => (
-                  <div
-                    key={actIdx}
-                    className={`border-2 rounded-xl p-4 md:p-5 transition-all hover:shadow-md ${
-                      activityColors[activity.type] || 'bg-gray-100 text-gray-800 border-gray-200'
-                    }`}
-                  >
-                    <div className="flex flex-col md:flex-row md:items-start gap-4">
-                      {/* Time & Icon */}
-                      <div className="flex items-center gap-3 md:flex-col md:items-center md:gap-2 md:min-w-[80px]">
-                        <span className="text-3xl">{activityIcons[activity.type] || '📌'}</span>
-                        {activity.start_time && (
-                          <div className="text-center">
-                            <p className="font-bold text-sm">{activity.start_time}</p>
-                            {activity.end_time && (
-                              <p className="text-xs opacity-75">{activity.end_time}</p>
+                  <div key={actIdx} className="relative">
+                    {/* Timeline connector line */}
+                    {actIdx < day.activities.length - 1 && (
+                      <div className="absolute left-[20px] md:left-[45px] top-[60px] bottom-[-16px] w-1 bg-gradient-to-b from-indigo-300 to-purple-300 z-0" />
+                    )}
+                    
+                    <div className="relative z-10 mb-4">
+                      <div
+                        className={`border-2 rounded-xl p-4 md:p-5 transition-all hover:shadow-md ${
+                          activityColors[activity.type] || 'bg-gray-100 text-gray-800 border-gray-200'
+                        }`}
+                      >
+                        <div className="flex flex-col md:flex-row md:items-start gap-4">
+                          {/* Time & Icon */}
+                          <div className="flex items-center gap-3 md:flex-col md:items-center md:gap-2 md:min-w-[80px] relative">
+                            {/* Connection dot */}
+                            <div className="absolute -left-3 md:-left-[26px] top-1/2 -translate-y-1/2 w-3 h-3 bg-indigo-500 rounded-full border-2 border-white shadow-md z-20" />
+                            
+                            <span className="text-3xl relative z-10">{activityIcons[activity.type] || '📌'}</span>
+                            {activity.start_time && (
+                              <div className="text-center">
+                                <p className="font-bold text-sm">{activity.start_time}</p>
+                                {activity.end_time && (
+                                  <p className="text-xs opacity-75">{activity.end_time}</p>
+                                )}
+                              </div>
                             )}
                           </div>
-                        )}
-                      </div>
 
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-lg mb-1">{activity.title}</h3>
-                        <p className="text-sm font-medium mb-2 flex items-center gap-1">
-                          <span>📍</span>
-                          {activity.location}
-                        </p>
-                        <p className="text-sm mb-2">{activity.description}</p>
-                        {activity.notes && (
-                          <div className="mt-3 p-3 bg-white/50 rounded-lg border border-current/20">
-                            <p className="text-xs font-medium flex items-start gap-2">
-                              <span className="text-base">💡</span>
-                              <span>{activity.notes}</span>
+                          {/* Content */}
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-bold text-lg mb-1">{activity.title}</h3>
+                            <p className="text-sm font-medium mb-2 flex items-center gap-1">
+                              <span>📍</span>
+                              {activity.location}
                             </p>
+                            <p className="text-sm mb-2">{activity.description}</p>
+                            {activity.notes && (
+                              <div className="mt-3 p-3 bg-white/50 rounded-lg border border-current/20">
+                                <p className="text-xs font-medium flex items-start gap-2">
+                                  <span className="text-base">💡</span>
+                                  <span>{activity.notes}</span>
+                                </p>
+                              </div>
+                            )}
                           </div>
-                        )}
+                        </div>
                       </div>
                     </div>
                   </div>
