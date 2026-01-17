@@ -1,5 +1,9 @@
+'use client';
+
 import agendaData from '@/data/agenda.json';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/translations';
+import Navigation from '@/components/Navigation';
 
 interface Activity {
   type: string;
@@ -57,24 +61,20 @@ const activityIcons: Record<string, string> = {
 
 export default function AgendaPage() {
   const { trip, days } = agendaData;
+  const { t, language, setLanguage } = useTranslation();
 
   return (
     <main className="min-h-screen bg-gray-50">
+      <Navigation language={language} setLanguage={setLanguage} showLanguageToggle={true} />
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              ← Back to Home
-            </Link>
+          <div className="flex items-center justify-end mb-4">
             <Link 
               href="/upload" 
               className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium"
             >
-              📤 Update Agenda
+              {t('updateAgenda')}
             </Link>
           </div>
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8">
@@ -94,7 +94,7 @@ export default function AgendaPage() {
             
             {/* Bases */}
             <div className="mt-6 space-y-3">
-              <h3 className="font-semibold text-gray-700 text-sm uppercase tracking-wide">Accommodations</h3>
+              <h3 className="font-semibold text-gray-700 text-sm uppercase tracking-wide">{t('accommodations')}</h3>
               {trip.bases.map((base: Base, idx: number) => (
                 <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl">🏨</span>

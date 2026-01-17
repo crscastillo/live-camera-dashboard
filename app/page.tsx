@@ -1,4 +1,5 @@
 import camerasData from '@/data/cameras.json';
+import Navigation from '@/components/Navigation';
 
 interface Camera {
   id: string;
@@ -11,7 +12,8 @@ export default function Home() {
   const cameras: Camera[] = camerasData;
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <maNavigation />
+      <in className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-2 text-gray-800">
           Live Camera Dashboard
