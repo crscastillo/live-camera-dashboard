@@ -63,6 +63,13 @@ export default function AgendaPage() {
   const { trip, days } = agendaData;
   const { t, language, setLanguage } = useTranslation();
 
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split('T')[0];
+  
+  const isPastDay = (dayDate: string) => {
+    return dayDate < today;
+  };
+
   return (
     <main className="min-h-screen bg-gray-50">
       <Navigation language={language} setLanguage={setLanguage} showLanguageToggle={true} />
@@ -105,10 +112,13 @@ export default function AgendaPage() {
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
+              ))}{
+            const isDayPast = isPastDay(day.date);
+            
+            return (
+            <div key={day.date} className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}>
+              {/* Day Header */}
+              <div className={`${isDayPast ? 'bg-gray-400' : 'bg-gray-800'} text-white p-5 md:p-6`}
 
         {/* Days Timeline */}
         <div className="space-y-6">
@@ -181,7 +191,8 @@ export default function AgendaPage() {
                       </div>
                     </div>
                   </div>
-                ))}
+            );
+          })}   ))}
               </div>
             </div>
           ))}
