@@ -14,9 +14,10 @@ export default function Home() {
   const cameras: Camera[] = camerasData;
 
   return (
-    <maNavigation />
-      <in className="min-h-screen bg-gray-100">
-      <div className="container mx-auto px-4 py-8">
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-gray-100">
+        <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-2 text-gray-800">
           Live Camera Dashboard
         </h1>
@@ -49,6 +50,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+    </>
     </main>
   );
 }
