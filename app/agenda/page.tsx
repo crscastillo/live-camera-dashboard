@@ -4,6 +4,7 @@ import agendaData from '@/data/agenda.json';
 import Link from 'next/link';
 import { useTranslation } from '@/lib/translations';
 import Navigation from '@/components/Navigation';
+import { useEffect, useRef } from 'react';
 
 interface Activity {
   type: string;
@@ -61,12 +62,20 @@ const activityIcons: Record<string, string> = {
 
 export default function AgendaPage() {
   const { trip, days } = agendaData;
-  const { t } = useTranslation();
+  const todayRef = useRef<HTMLDivElement>(null);
 
   const today = new Date().toISOString().split('T')[0];
   
   const isPastDay = (dayDate: string) => {
     return dayDate < today;
+  };
+
+  useEffect(() => {
+    // Scroll to today's section after component mounts
+    if (todayRef.current) {
+      todayRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []) return dayDate < today;
   };
 
   return (
@@ -109,9 +118,14 @@ export default function AgendaPage() {
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+            const isToday = day.date === today;
+            
+            return (
+              <div 
+                key={day.date} 
+                ref={isToday ? todayRef : null}
+                className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}
+              
         </div>
 
         <div className="space-y-6">
