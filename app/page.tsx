@@ -1,3 +1,5 @@
+'use client';
+
 import camerasData from '@/data/cameras.json';
 import Navigation from '@/components/Navigation';
 

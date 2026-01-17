@@ -68,7 +68,7 @@ export default function UploadPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation language={language} setLanguage={setLanguage} showLanguageToggle={true} />
+      <Navigation />
       <div className="py-12 px-4">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">

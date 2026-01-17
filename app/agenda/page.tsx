@@ -72,7 +72,7 @@ export default function AgendaPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation language={language} setLanguage={setLanguage} showLanguageToggle={true} />
+      <Navigation />
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="mb-8">
