@@ -61,9 +61,8 @@ const activityIcons: Record<string, string> = {
 
 export default function AgendaPage() {
   const { trip, days } = agendaData;
-  const { t, language, setLanguage } = useTranslation();
+  const { t } = useTranslation();
 
-  // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split('T')[0];
   
   const isPastDay = (dayDate: string) => {
@@ -74,7 +73,6 @@ export default function AgendaPage() {
     <main className="min-h-screen bg-gray-50">
       <Navigation />
       <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-end mb-4">
             <Link 
@@ -99,7 +97,6 @@ export default function AgendaPage() {
               </div>
             </div>
             
-            {/* Bases */}
             <div className="mt-6 space-y-3">
               <h3 className="font-semibold text-gray-700 text-sm uppercase tracking-wide">{t('accommodations')}</h3>
               {trip.bases.map((base: Base, idx: number) => (
@@ -112,90 +109,83 @@ export default function AgendaPage() {
                     </p>
                   </div>
                 </div>
-              ))}{
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {days.map((day: Day) => {
             const isDayPast = isPastDay(day.date);
             
             return (
-            <div key={day.date} className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}>
-              {/* Day Header */}
-              <div className={`${isDayPast ? 'bg-gray-400' : 'bg-gray-800'} text-white p-5 md:p-6`}
-
-        {/* Days Timeline */}
-        <div className="space-y-6">
-          {days.map((day: Day, dayIdx: number) => (
-            <div key={day.date} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-              {/* Day Header */}
-              <div className="bg-gray-800 text-white p-5 md:p-6">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                  <div>
-                    <h2 className="text-2xl font-bold">{day.day}</h2>
-                    <p className="text-gray-300">{day.date}</p>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                    <span className="text-xl">📍</span>
-                    <span className="font-medium">{day.location}</span>
+              <div key={day.date} className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}>
+                <div className={`${isDayPast ? 'bg-gray-400' : 'bg-gray-800'} text-white p-5 md:p-6`}>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                    <div>
+                      <h2 className="text-2xl font-bold">{day.day}</h2>
+                      <p className="text-gray-300">{day.date}</p>
+                    </div>
+                    <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
+                      <span className="text-xl">📍</span>
+                      <span className="font-medium">{day.location}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Activities */}
-              <div className="p-5 md:p-6">
-                {day.activities.map((activity: Activity, actIdx: number) => (
-                  <div key={actIdx} className="relative">
-                    {/* Timeline connector line */}
-                    {actIdx < day.activities.length - 1 && (
-                      <div className="absolute left-[20px] md:left-[45px] top-[60px] bottom-[-16px] w-0.5 bg-gray-300 z-0" />
-                    )}
-                    
-                    <div className="relative z-10 mb-4">
-                      <div
-                        className={`border rounded-lg p-4 md:p-5 transition-all hover:shadow-sm ${
-                          activityColors[activity.type] || 'bg-gray-50 text-gray-800 border-gray-300'
-                        }`}
-                      >
-                        <div className="flex flex-col md:flex-row md:items-start gap-4">
-                          {/* Time & Icon */}
-                          <div className="flex items-center gap-3 md:flex-col md:items-center md:gap-2 md:min-w-[80px] relative">
-                            {/* Connection dot */}
-                            <div className="absolute -left-3 md:-left-[26px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-gray-800 rounded-full border-2 border-white shadow-sm z-20" />
-                            
-                            <span className="text-3xl relative z-10">{activityIcons[activity.type] || '📌'}</span>
-                            {activity.start_time && (
-                              <div className="text-center">
-                                <p className="font-bold text-sm">{activity.start_time}</p>
-                                {activity.end_time && (
-                                  <p className="text-xs opacity-75">{activity.end_time}</p>
-                                )}
-                              </div>
-                            )}
-                          </div>
+                <div className="p-5 md:p-6">
+                  {day.activities.map((activity: Activity, actIdx: number) => (
+                    <div key={actIdx} className="relative">
+                      {actIdx < day.activities.length - 1 && (
+                        <div className="absolute left-[20px] md:left-[45px] top-[60px] bottom-[-16px] w-0.5 bg-gray-300 z-0" />
+                      )}
+                      
+                      <div className="relative z-10 mb-4">
+                        <div
+                          className={`border rounded-lg p-4 md:p-5 transition-all hover:shadow-sm ${
+                            activityColors[activity.type] || 'bg-gray-50 text-gray-800 border-gray-300'
+                          }`}
+                        >
+                          <div className="flex flex-col md:flex-row md:items-start gap-4">
+                            <div className="flex items-center gap-3 md:flex-col md:items-center md:gap-2 md:min-w-[80px] relative">
+                              <div className="absolute -left-3 md:-left-[26px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-gray-800 rounded-full border-2 border-white shadow-sm z-20" />
+                              
+                              <span className="text-3xl relative z-10">{activityIcons[activity.type] || '📌'}</span>
+                              {activity.start_time && (
+                                <div className="text-center">
+                                  <p className="font-bold text-sm">{activity.start_time}</p>
+                                  {activity.end_time && (
+                                    <p className="text-xs opacity-75">{activity.end_time}</p>
+                                  )}
+                                </div>
+                              )}
+                            </div>
 
-                          {/* Content */}
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-bold text-lg mb-1">{activity.title}</h3>
-                            <p className="text-sm font-medium mb-2 flex items-center gap-1">
-                              <span>📍</span>
-                              {activity.location}
-                            </p>
-                            <p className="text-sm mb-2">{activity.description}</p>
-                            {activity.notes && (
-                              <div className="mt-3 p-3 bg-white/50 rounded-lg border border-current/20">
-                                <p className="text-xs font-medium flex items-start gap-2">
-                                  <span className="text-base">💡</span>
-                                  <span>{activity.notes}</span>
-                                </p>
-                              </div>
-                            )}
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-bold text-lg mb-1">{activity.title}</h3>
+                              <p className="text-sm font-medium mb-2 flex items-center gap-1">
+                                <span>📍</span>
+                                {activity.location}
+                              </p>
+                              <p className="text-sm mb-2">{activity.description}</p>
+                              {activity.notes && (
+                                <div className="mt-3 p-3 bg-white/50 rounded-lg border border-current/20">
+                                  <p className="text-xs font-medium flex items-start gap-2">
+                                    <span className="text-base">💡</span>
+                                    <span>{activity.notes}</span>
+                                  </p>
+                                </div>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-            );
-          })}   ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </main>
