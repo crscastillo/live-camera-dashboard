@@ -1,0 +1,52 @@
+import { put } from '@vercel/blob';
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function POST(request: NextRequest) {
+  try {
+    const formData = await request.formData();
+    const file = formData.get('file') as File;
+
+    if (!file) {
+      return NextResponse.json(
+        { error: 'No file provided' },
+        { status: 400 }
+      );
+    }
+
+    // Read file content
+    const text = await file.text();
+
+    // Validate JSON
+    try {
+      JSON.parse(text);
+    } catch (error) {
+      return NextResponse.json(
+        { error: 'Invalid JSON format' },
+        { status: 400 }
+      );
+    }
+
+    // Upload to Vercel Blob
+    const blob = await put('agenda.json', text, {
+      access: 'public',
+      contentType: 'application/json',
+    });
+
+    // Store the blob URL in a simple way (you might want to use a database in production)
+    // For now, we'll return it and the client can handle it
+    
+    return NextResponse.json(
+      { 
+        message: 'Agenda updated successfully',
+        url: blob.url
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Upload error:', error);
+    return NextResponse.json(
+      { error: 'Failed to update agenda' },
+      { status: 500 }
+    );
+  }
+}

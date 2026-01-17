@@ -141,6 +141,14 @@ export default function UploadPage() {
                 <li>{t('requirement3')}</li>
               </ul>
             </div>
+
+            <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+              <h3 className="font-semibold text-yellow-800 mb-2">⚠️ Production Note</h3>
+              <p className="text-sm text-yellow-700">
+                File upload works locally. In production on Vercel, due to read-only filesystem limitations, 
+                you'll need to update the agenda by committing changes to GitHub, which will trigger an automatic deployment.
+              </p>
+            </div>
           </div>
         </div>
       </div>
