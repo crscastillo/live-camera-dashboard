@@ -40,17 +40,36 @@ export async function POST(request: NextRequest) {
     // Write to agenda.json
     const filePath = path.join(process.cwd(), 'data', 'agenda.json');
     console.log('[API] Writing to:', filePath);
-    await writeFile(filePath, content, 'utf-8');
-    console.log('[API] File written successfully');
+    
+    try {
+      await writeFile(filePath, content, 'utf-8');
+      console.log('[API] File written successfully');
 
-    return NextResponse.json(
-      { message: 'Agenda updated successfully' },
-      { status: 200 }
-    );
+      return NextResponse.json(
+        { message: 'Agenda updated successfully' },
+        { status: 200 }
+      );
+    } catch (writeError: any) {
+      console.error('[API] File write error:', writeError);
+      
+      // Check if it's a read-only filesystem error (common on Vercel)
+      if (writeError.code === 'EROFS' || writeError.message?.includes('EROFS') || 
+          writeError.message?.includes('read-only')) {
+        return NextResponse.json(
+          { 
+            error: 'File upload not available in production. Vercel uses a read-only filesystem. Please update agenda.json in your GitHub repository and redeploy.',
+            code: 'READ_ONLY_FS'
+          },
+          { status: 403 }
+        );
+      }
+      
+      throw writeError; // Re-throw other errors
+    }
   } catch (error) {
     console.error('[API] Upload error:', error);
     return NextResponse.json(
-      { error: 'Failed to update agenda' },
+      { error: `Failed to update agenda: ${error instanceof Error ? error.message : 'Unknown error'}` },
       { status: 500 }
     );
   }

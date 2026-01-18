@@ -71,6 +71,7 @@ export default function UploadPage() {
         const error = await response.json();
         console.error('[Paste] Error response:', error);
         setStatus('error');
+        // Show the full error message from the API
         setMessage(error.error || t('uploadFailed'));
       }
     } catch (error) {
@@ -133,6 +134,7 @@ export default function UploadPage() {
         const error = await response.json();
         console.error('[Upload] Error response:', error);
         setStatus('error');
+        // Show the full error message from the API
         setMessage(error.error || t('uploadFailed'));
       }
     } catch (error) {
@@ -313,11 +315,18 @@ export default function UploadPage() {
             </div>
 
             <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-              <h3 className="font-semibold text-yellow-800 mb-2">⚠️ Production Note</h3>
-              <p className="text-sm text-yellow-700">
-                File upload works locally. In production on Vercel, due to read-only filesystem limitations, 
-                you'll need to update the agenda by committing changes to GitHub, which will trigger an automatic deployment.
+              <h3 className="font-semibold text-yellow-800 mb-2">⚠️ Production Limitation</h3>
+              <p className="text-sm text-yellow-700 mb-2">
+                <strong>This feature only works in local development.</strong>
               </p>
+              <p className="text-sm text-yellow-700 mb-2">
+                On Vercel production, the filesystem is read-only. To update the agenda in production:
+              </p>
+              <ol className="text-sm text-yellow-700 list-decimal list-inside space-y-1">
+                <li>Edit <code className="bg-yellow-100 px-1 rounded">data/agenda.json</code> in your local repository</li>
+                <li>Commit and push to GitHub</li>
+                <li>Vercel will automatically redeploy with the updated agenda</li>
+              </ol>
             </div>
           </div>
         </div>
