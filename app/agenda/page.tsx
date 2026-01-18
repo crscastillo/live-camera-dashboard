@@ -98,7 +98,9 @@ export default function AgendaPage() {
             <div className="flex flex-wrap gap-4 text-gray-600 mb-4">
               <div className="flex items-center gap-2">
                 <span className="text-xl">📅</span>
-                <span className="font-medium">{trip.start_date} to {trip.end_date}</span>
+                <span className="font-medium">
+                  {getLocalizedDate(trip.start_date)} {language === 'es' ? 'a' : 'to'} {getLocalizedDate(trip.end_date)}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-xl">🕐</span>
@@ -131,14 +133,19 @@ export default function AgendaPage() {
         <div className="space-y-6">
           {days.map((day: Day) => {
             const isDayPast = isPastDay(day.date);
+            const isToday = day.date === today;
             
             return (
-              <div key={day.date} className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}>
+              <div 
+                key={day.date} 
+                ref={isToday ? todayRef : null}
+                className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}
+              >
                 <div className={`${isDayPast ? 'bg-gray-400' : 'bg-gray-800'} text-white p-5 md:p-6`}>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                     <div>
-                      <h2 className="text-2xl font-bold">{day.day}</h2>
-                      <p className="text-gray-300">{day.date}</p>
+                      <h2 className="text-2xl font-bold">{getLocalizedDayName(day.date)}</h2>
+                      <p className="text-gray-300">{getLocalizedDate(day.date)}</p>
                     </div>
                     <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
                       <span className="text-xl">📍</span>
