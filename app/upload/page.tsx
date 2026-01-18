@@ -22,17 +22,23 @@ export default function UploadPage() {
 
   const handlePasteSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('[Paste] Paste JSON submit started');
     
     if (!jsonText.trim()) {
+      console.log('[Paste] Empty JSON text');
       setStatus('error');
       setMessage(t('emptyJson'));
       return;
     }
 
+    console.log('[Paste] JSON text length:', jsonText.length);
+
     // Validate JSON
     try {
-      JSON.parse(jsonText);
+      const parsed = JSON.parse(jsonText);
+      console.log('[Paste] JSON validation passed:', parsed);
     } catch (err) {
+      console.error('[Paste] JSON validation failed:', err);
       setStatus('error');
       setMessage(t('invalidJson'));
       return;
@@ -42,8 +48,10 @@ export default function UploadPage() {
     
     // Create a blob from the JSON text
     const blob = new Blob([jsonText], { type: 'application/json' });
+    console.log('[Paste] Blob created, size:', blob.size);
     const formData = new FormData();
     formData.append('file', blob, 'agenda.json');
+    console.log('[Paste] FormData created, sending to API...');
 
     try {
       const response = await fetch('/api/upload-agenda', {
@@ -51,16 +59,22 @@ export default function UploadPage() {
         body: formData,
       });
 
+      console.log('[Paste] API response status:', response.status);
+
       if (response.ok) {
+        const result = await response.json();
+        console.log('[Paste] Success response:', result);
         setStatus('success');
         setMessage(t('uploadSuccess'));
         setJsonText('');
       } else {
         const error = await response.json();
+        console.error('[Paste] Error response:', error);
         setStatus('error');
         setMessage(error.error || t('uploadFailed'));
       }
     } catch (error) {
+      console.error('[Paste] Network error:', error);
       setStatus('error');
       setMessage(t('networkError'));
     }
@@ -68,18 +82,25 @@ export default function UploadPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('[Upload] File upload started');
     
     if (!file) {
+      console.log('[Upload] No file selected');
       setStatus('error');
       setMessage(t('pleaseSelectFile'));
       return;
     }
 
+    console.log('[Upload] File selected:', file.name, file.size, 'bytes');
+
     // Validate JSON
     const text = await file.text();
+    console.log('[Upload] File read, length:', text.length);
     try {
-      JSON.parse(text);
+      const parsed = JSON.parse(text);
+      console.log('[Upload] JSON validation passed:', parsed);
     } catch (err) {
+      console.error('[Upload] JSON validation failed:', err);
       setStatus('error');
       setMessage(t('invalidJson'));
       return;
@@ -89,6 +110,7 @@ export default function UploadPage() {
     
     const formData = new FormData();
     formData.append('file', file);
+    console.log('[Upload] FormData created, sending to API...');
 
     try {
       const response = await fetch('/api/upload-agenda', {
@@ -96,7 +118,11 @@ export default function UploadPage() {
         body: formData,
       });
 
+      console.log('[Upload] API response status:', response.status);
+
       if (response.ok) {
+        const result = await response.json();
+        console.log('[Upload] Success response:', result);
         setStatus('success');
         setMessage(t('uploadSuccess'));
         setFile(null);
@@ -105,10 +131,12 @@ export default function UploadPage() {
         if (fileInput) fileInput.value = '';
       } else {
         const error = await response.json();
+        console.error('[Upload] Error response:', error);
         setStatus('error');
         setMessage(error.error || t('uploadFailed'));
       }
     } catch (error) {
+      console.error('[Upload] Network error:', error);
       setStatus('error');
       setMessage(t('networkError'));
     }
