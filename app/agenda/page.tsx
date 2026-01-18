@@ -62,6 +62,7 @@ const activityIcons: Record<string, string> = {
 
 export default function AgendaPage() {
   const { trip, days } = agendaData;
+  const { t, language } = useTranslation();
   const todayRef = useRef<HTMLDivElement>(null);
 
   const today = new Date().toISOString().split('T')[0];
@@ -70,13 +71,23 @@ export default function AgendaPage() {
     return dayDate < today;
   };
 
+  const getLocalizedDayName = (dateString: string) => {
+    const date = new Date(dateString + 'T12:00:00');
+    const locale = language === 'es' ? 'es-ES' : 'en-US';
+    return date.toLocaleDateString(locale, { weekday: 'long' });
+  };
+
+  const getLocalizedDate = (dateString: string) => {
+    const date = new Date(dateString + 'T12:00:00');
+    const locale = language === 'es' ? 'es-ES' : 'en-US';
+    return date.toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' });
+  };
+
   useEffect(() => {
-    // Scroll to today's section after component mounts
     if (todayRef.current) {
       todayRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  }, []) return dayDate < today;
-  };
+  }, []);
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -120,14 +131,9 @@ export default function AgendaPage() {
                     </p>
                   </div>
                 </div>
-            const isToday = day.date === today;
-            
-            return (
-              <div 
-                key={day.date} 
-                ref={isToday ? todayRef : null}
-                className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden ${isDayPast ? 'opacity-50' : ''}`}
-              
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="space-y-6">
