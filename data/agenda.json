@@ -1,140 +1,106 @@
 {
-  "trip": {
-    "name": "Colorado Family Trip",
-    "timezone": "America/Denver",
-    "start_date": "2026-01-15",
-    "end_date": "2026-01-21",
-    "bases": [
-      {
-        "date": "2026-01-15",
-        "location": "Denver",
-        "lodging": "La Quinta Inn & Suites Denver Airport"
-      },
-      {
-        "date_range": "2026-01-16 to 2026-01-19",
-        "location": "Blue River / Breckenridge",
-        "lodging": "Airbnb"
-      },
-      {
-        "date_range": "2026-01-20 to 2026-01-21",
-        "location": "Denver",
-        "lodging": "La Quinta Inn & Suites Denver Airport (DIA)"
-      }
-    ]
-  },
-  "days": [
+  "date": "2026-01-20",
+  "day": "Tuesday",
+  "location": "Breckenridge → Denver",
+  "activities": [
     {
-      "date": "2026-01-20",
-      "day": "Tuesday",
-      "location": "Breckenridge → Denver",
-      "activities": [
-        {
-          "type": "travel",
-          "title": "Drive Breckenridge → Denver",
-          "start_time": "10:00",
-          "end_time": "12:30",
-          "location": "US-6 / I-70",
-          "description": "Mountain drive from Breckenridge to Denver.",
-          "notes": "Weather dependent; allow buffer time."
-        },
-        {
-          "type": "photo_stop",
-          "title": "Loveland Pass Summit (Photo Stop)",
-          "start_time": "11:15",
-          "end_time": "11:35",
-          "location": "Loveland Pass",
-          "description": "Scenic stop at the Continental Divide.",
-          "notes": "Short stop; very cold and windy possible."
-        },
-        {
-          "type": "photo_stop",
-          "title": "Clear Creek Canyon Scenic Pullouts",
-          "start_time": "12:00",
-          "end_time": "12:20",
-          "location": "Clear Creek Canyon",
-          "description": "River and canyon views along the descent.",
-          "notes": "Quick roadside pullouts."
-        },
-        {
-          "type": "meal",
-          "title": "Lunch in Downtown Denver",
-          "start_time": "13:00",
-          "end_time": "14:15",
-          "location": "Downtown Denver",
-          "description": "Casual lunch near Union Station or Larimer Square.",
-          "notes": "Family-friendly options."
-        },
-        {
-          "type": "walk",
-          "title": "Downtown Denver Walk",
-          "start_time": "14:30",
-          "end_time": "15:00",
-          "location": "Downtown Denver",
-          "description": "Short walk around Union Station and Larimer Square.",
-          "notes": "Easy, mostly flat walking."
-        },
-        {
-          "type": "flexible",
-          "title": "Optional Family Activity (choose one)",
-          "start_time": "15:00",
-          "end_time": "17:30",
-          "location": "Denver",
-          "description": "Choose one activity depending on energy and weather.",
-          "notes": "Only one option recommended.",
-          "options": [
-            "Confluence Park (free)",
-            "Denver Zoo",
-            "Denver Museum of Nature & Science",
-            "Colorado State Capitol (free)",
-            "Molly Brown House Museum",
-            "Wings Over the Rockies Air & Space Museum"
-          ]
-        },
-        {
-          "type": "sports",
-          "title": "NBA Game – Denver Nuggets vs LA Lakers",
-          "start_time": "18:30",
-          "end_time": "21:00",
-          "location": "Ball Arena",
-          "description": "Optional evening NBA game.",
-          "notes": "Attend only if energy allows.",
-          "optional": true
-        },
-        {
-          "type": "lodging",
-          "title": "Hotel Check-in",
-          "start_time": "21:30",
-          "end_time": "22:00",
-          "location": "La Quinta Inn & Suites Denver Airport (DIA)",
-          "description": "Overnight near the airport.",
-          "notes": "Prepare for early departure next day."
-        }
+      "type": "travel",
+      "title": "Drive Breckenridge → Denver",
+      "start_time": "10:00",
+      "end_time": "12:30",
+      "location": "US-6 / I-70",
+      "description": "Mountain drive from Breckenridge to Denver.",
+      "notes": "Weather dependent; allow buffer time."
+    },
+    {
+      "type": "photo_stop",
+      "title": "Loveland Pass Summit (Photo Stop)",
+      "start_time": "11:15",
+      "end_time": "11:35",
+      "location": "Loveland Pass",
+      "description": "Scenic stop at the Continental Divide with panoramic mountain views.",
+      "notes": "Very cold and windy possible; short stop recommended."
+    },
+    {
+      "type": "photo_stop",
+      "title": "Clear Creek Canyon Scenic Pullouts",
+      "start_time": "12:00",
+      "end_time": "12:20",
+      "location": "Clear Creek Canyon",
+      "description": "River canyon views during descent toward Golden.",
+      "notes": "Quick roadside photo opportunities."
+    },
+    {
+      "type": "meal",
+      "title": "Lunch near Union Station",
+      "start_time": "13:00",
+      "end_time": "14:00",
+      "location": "Union Station, Denver",
+      "description": "Casual family-friendly lunch inside or near Union Station.",
+      "notes": "Multiple food hall options; restrooms available."
+    },
+    {
+      "type": "walk",
+      "title": "Union Station Interior & Plaza",
+      "start_time": "14:00",
+      "end_time": "14:20",
+      "location": "Union Station",
+      "description": "Historic train station, Great Hall, seasonal decorations.",
+      "notes": "Free; good photo spot."
+    },
+    {
+      "type": "walk",
+      "title": "LoDo Historic District Walk",
+      "start_time": "14:20",
+      "end_time": "14:50",
+      "location": "Lower Downtown (LoDo)",
+      "description": "Walk past historic brick buildings, Wynkoop Street, and shops.",
+      "notes": "Flat and walkable; stroller friendly."
+    },
+    {
+      "type": "walk",
+      "title": "16th Street Mall Pedestrian Area",
+      "start_time": "15:00",
+      "end_time": "15:30",
+      "location": "16th Street Mall",
+      "description": "Pedestrian mall with street art, performers, and shops.",
+      "notes": "Free MallRide shuttle available."
+    },
+    {
+      "type": "flexible",
+      "title": "Optional Family Activity (choose one)",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "location": "Denver",
+      "description": "Choose one activity depending on interest and energy.",
+      "notes": "All options align with this same time window.",
+      "options": [
+        "Confluence Park (free riverfront walk and playground)",
+        "Colorado State Capitol (free interior tour if open)",
+        "Denver Zoo",
+        "Denver Museum of Nature & Science",
+        "Molly Brown House Museum",
+        "Wings Over the Rockies Air & Space Museum"
       ]
     },
     {
-      "date": "2026-01-21",
-      "day": "Wednesday",
-      "location": "Denver → Orlando",
-      "activities": [
-        {
-          "type": "travel",
-          "title": "Hotel → Denver International Airport",
-          "start_time": "11:00",
-          "end_time": "11:30",
-          "location": "DIA",
-          "description": "Short drive to airport.",
-          "notes": "Allow time for rental car return."
-        },
-        {
-          "type": "flight",
-          "title": "Flight to Orlando",
-          "start_time": "14:00",
-          "end_time": "18:30",
-          "location": "DEN → MCO",
-          "description": "Afternoon flight to Orlando.",
-          "notes": "Arrive at airport by 12:00–12:30 pm."
-        }
-      ]
+      "type": "sports",
+      "title": "NBA Game – Denver Nuggets vs LA Lakers",
+      "start_time": "18:30",
+      "end_time": "21:00",
+      "location": "Ball Arena",
+      "description": "Optional evening NBA game.",
+      "notes": "Allow 20–30 min drive from downtown; parking or rideshare.",
+      "optional": true
+    },
+    {
+      "type": "lodging",
+      "title": "Hotel Check-in",
+      "start_time": "21:30",
+      "end_time": "22:00",
+      "location": "La Quinta Inn & Suites Denver Airport (DIA)",
+      "description": "Overnight near the airport.",
+      "notes": "Prepare luggage for next-day flight."
     }
   ]
 }
