@@ -1,260 +1,260 @@
 {
   "trip": {
-    "name": "Colorado Family Trip",
+    "name": "Colorado Family Winter Trip",
     "timezone": "America/Denver",
-    "start_date": "2026-01-15",
-    "end_date": "2026-01-20",
-    "bases": [
-      {
-        "date": "2026-01-15",
-        "location": "Denver",
-        "lodging": "La Quinta Inn & Suites Denver Airport"
-      },
-      {
-        "date_range": "2026-01-16 to 2026-01-20",
-        "location": "Blue River / Breckenridge",
-        "lodging": "Airbnb"
-      }
-    ]
+    "startDate": "2026-01-15",
+    "endDate": "2026-01-21",
+    "travelers": {
+      "adults": 2,
+      "children": 2
+    }
   },
+  "lodging": [
+    {
+      "from": "2026-01-15",
+      "to": "2026-01-16",
+      "location": "Denver",
+      "name": "La Quinta Inn & Suites Denver International Airport"
+    },
+    {
+      "from": "2026-01-16",
+      "to": "2026-01-20",
+      "location": "Blue River / Breckenridge",
+      "name": "Airbnb"
+    },
+    {
+      "from": "2026-01-20",
+      "to": "2026-01-21",
+      "location": "Denver",
+      "name": "La Quinta Inn & Suites Denver International Airport"
+    }
+  ],
   "days": [
     {
       "date": "2026-01-15",
-      "day": "Thursday",
-      "location": "Denver",
+      "dayName": "Thursday",
+      "base": "Denver",
       "activities": [
         {
           "type": "shopping",
-          "title": "CINCH Store",
-          "start_time": "10:30",
-          "end_time": "11:30",
-          "location": "CINCH Store, Denver",
-          "description": "Authentic western clothing: jeans, shirts, belts.",
-          "notes": "Approx. 30 min drive from hotel."
+          "title": "Cinch Store",
+          "time": "10:00 - 11:00",
+          "location": "Denver",
+          "notes": "Tienda vaquera especializada"
         },
         {
           "type": "shopping",
           "title": "Boot Barn",
-          "start_time": "11:45",
-          "end_time": "12:45",
-          "location": "Boot Barn, Denver",
-          "description": "Western boots, hats, accessories for the whole family.",
-          "notes": "10–15 min drive from CINCH Store."
+          "time": "11:30 - 12:30",
+          "location": "Denver",
+          "notes": "Botas y ropa western"
         },
         {
-          "type": "meal",
-          "title": "Lunch",
-          "start_time": "13:00",
-          "end_time": "14:00",
-          "location": "Central Denver",
-          "description": "Casual lunch (BBQ or Mexican recommended).",
-          "notes": "Flexible location depending on traffic."
+          "type": "shopping",
+          "title": "Bass Pro Shops",
+          "time": "1:00 - 2:15",
+          "location": "Denver",
+          "notes": "Tienda grande, atractiva para niños"
         },
         {
-          "type": "attraction",
+          "type": "event",
           "title": "National Western Stock Show",
-          "start_time": "16:00",
-          "end_time": "18:00",
-          "location": "National Western Complex, Denver",
-          "description": "Explore barns, exhibitions, and western culture.",
-          "notes": "Arrive early to walk the grounds."
+          "time": "4:00 - 6:00",
+          "location": "Denver",
+          "notes": "Feria ganadera tradicional"
         },
         {
           "type": "event",
           "title": "Professional Rodeo",
-          "start_time": "18:00",
-          "end_time": "19:30",
-          "location": "National Western Complex, Denver",
-          "description": "Evening rodeo show.",
-          "notes": "Main event of the day."
+          "time": "6:00 - 7:30",
+          "location": "Denver",
+          "optional": true
         }
       ]
     },
     {
       "date": "2026-01-16",
-      "day": "Friday",
-      "location": "Summit County",
+      "dayName": "Friday",
+      "base": "Blue River / Breckenridge",
       "activities": [
         {
           "type": "travel",
-          "title": "Drive Denver → Summit County",
-          "start_time": "10:00",
-          "end_time": "11:15",
-          "location": "Denver to Keystone/Breckenridge",
-          "description": "Mountain drive into Summit County.",
-          "notes": "Traffic and weather dependent."
+          "title": "Arrival from Denver",
+          "time": "11:00",
+          "notes": "Llegada a la zona"
         },
         {
-          "type": "village",
+          "type": "visit",
           "title": "Keystone Village + Lunch",
-          "start_time": "11:30",
-          "end_time": "15:00",
-          "location": "Keystone River Run Village",
-          "description": "Walk village, shops, gondola base, relaxed lunch.",
-          "notes": "All activities combined in one block."
+          "time": "11:00 - 15:00",
+          "location": "Keystone"
         },
         {
           "type": "scenic",
           "title": "Sapphire Point Overlook",
-          "start_time": "15:30",
-          "end_time": "16:00",
-          "location": "Dillon Reservoir",
-          "description": "Iconic scenic viewpoint over the lake.",
-          "notes": "Short stop, minimal walking."
+          "time": "16:30 - 17:00",
+          "location": "Dillon"
         },
         {
           "type": "shopping",
           "title": "Walmart Frisco",
-          "start_time": "16:30",
-          "end_time": "17:30",
-          "location": "Frisco, CO",
-          "description": "Groceries and supplies for the stay.",
-          "notes": "Convenient stop before evening activity."
+          "time": "17:30 - 18:30",
+          "location": "Frisco"
         },
         {
           "type": "attraction",
           "title": "Ice Castles",
-          "start_time": "18:30",
-          "end_time": "19:45",
-          "location": "Silverthorne, CO",
-          "description": "Illuminated ice castle experience.",
-          "notes": "Dress very warm; timed entry."
+          "time": "18:30 - 20:00",
+          "location": "Silverthorne"
         }
       ]
     },
     {
       "date": "2026-01-17",
-      "day": "Saturday",
-      "location": "Breckenridge",
+      "dayName": "Saturday",
+      "base": "Breckenridge",
       "activities": [
         {
+          "type": "parking",
+          "title": "Free Parking – Stephen C. West Ice Arena",
+          "time": "10:00"
+        },
+        {
           "type": "hiking",
-          "title": "Isaak Walton Trail",
-          "start_time": "10:30",
-          "end_time": "11:30",
-          "location": "Breckenridge",
-          "description": "Easy winter walk, very scenic.",
-          "notes": "Park at Stephen C. West Ice Arena (free)."
+          "title": "Isak Trail",
+          "time": "10:15 - 11:15"
         },
         {
-          "type": "snow_play",
-          "title": "Carter Park Sled Hill",
-          "start_time": "11:45",
-          "end_time": "12:45",
-          "location": "Carter Park, Breckenridge",
-          "description": "Free sledding hill for kids.",
-          "notes": "Best done earlier in the day."
+          "type": "snow",
+          "title": "Free Sledding Hill – Carter Park",
+          "time": "11:30 - 12:00"
         },
         {
-          "type": "village",
-          "title": "Main Street Breckenridge + Lunch",
-          "start_time": "12:00",
-          "end_time": "13:30",
-          "location": "Main Street Breckenridge",
-          "description": "Historic walk, shops, art, cafes, lunch.",
-          "notes": "Includes Barney Ford House, Welcome Center, galleries."
+          "type": "lunch_walk",
+          "title": "Main Street Breckenridge (walk + lunch)",
+          "time": "12:00 - 13:30",
+          "pointsOfInterest": [
+            "Blue River Plaza",
+            "Breckenridge Welcome Center",
+            "Mountain Top Cookie Shop",
+            "Clint's Bakery",
+            "Downstairs at Eric’s",
+            "Art galleries and murals"
+          ]
         },
         {
-          "type": "transport",
+          "type": "gondola",
           "title": "Breckenridge Free Gondola",
-          "start_time": "13:45",
-          "end_time": "15:15",
-          "location": "Breckenridge",
-          "description": "Scenic gondola ride between town and Peak 8.",
-          "notes": "Ride up and explore base area."
-        },
-        {
-          "type": "village",
-          "title": "Main Street Breckenridge (Afternoon)",
-          "start_time": "15:30",
-          "end_time": "18:45",
-          "location": "Main Street Breckenridge",
-          "description": "Coffee, galleries, shopping, relaxed walking.",
-          "notes": "All walkable using Free Ride."
+          "time": "13:45 - 15:15"
         }
       ]
     },
     {
       "date": "2026-01-18",
-      "day": "Sunday",
-      "location": "Breckenridge",
+      "dayName": "Sunday",
+      "base": "Breckenridge",
       "activities": [
         {
-          "type": "skiing",
-          "title": "Cross-Country Skiing",
-          "start_time": "10:30",
-          "end_time": "12:30",
-          "location": "Breckenridge Nordic Center",
-          "description": "Scenic Nordic skiing trails.",
-          "notes": "Rentals and lessons available."
+          "type": "ski",
+          "title": "Cross Country Ski – Breckenridge Nordic Center",
+          "time": "10:30 - 12:00"
         },
         {
-          "type": "meal",
+          "type": "lunch",
           "title": "Lunch in Breckenridge",
-          "start_time": "12:45",
-          "end_time": "14:00",
-          "location": "Main Street Breckenridge",
-          "description": "Casual lunch downtown.",
-          "notes": "Good options for families."
+          "time": "12:30 - 13:30"
         },
         {
-          "type": "experience",
-          "title": "Two Below Zero Sleigh Ride + Hot Cocoa",
-          "start_time": "14:30",
-          "end_time": "16:00",
-          "location": "Near Breckenridge",
-          "description": "Horse-drawn sleigh ride with hot cocoa.",
-          "notes": "Highlight experience; dress warm."
+          "type": "sleigh_ride",
+          "title": "Two Below Zero Sleigh Ride & Hot Cocoa",
+          "time": "14:30 - 16:00",
+          "notes": "Llegar 45 minutos antes"
         }
       ]
     },
     {
       "date": "2026-01-19",
-      "day": "Monday",
-      "location": "Frisco & Vail",
+      "dayName": "Monday",
+      "base": "Breckenridge",
       "activities": [
         {
-          "type": "snow_play",
-          "title": "Frisco Adventure Park Tubing",
-          "start_time": "10:30",
-          "end_time": "11:30",
-          "location": "Frisco Adventure Park",
-          "description": "Tubing session (reserved).",
-          "notes": "Change clothes after."
+          "type": "snow",
+          "title": "Tubing – Frisco Adventure Park",
+          "time": "10:30 - 11:30"
         },
         {
           "type": "travel",
-          "title": "Drive Frisco → Vail",
-          "start_time": "12:30",
-          "end_time": "13:45",
-          "location": "Frisco to Vail",
-          "description": "Scenic mountain drive.",
-          "notes": "Weather dependent."
-        },
-        {
-          "type": "village",
-          "title": "Vail Village & Lionshead",
-          "start_time": "14:00",
-          "end_time": "18:00",
-          "location": "Vail, CO",
-          "description": "Walk alpine village, bridges, shops, cafes.",
-          "notes": "Use free Vail shuttles between villages."
+          "title": "Visit Vail Village",
+          "time": "13:00 - 18:00",
+          "pointsOfInterest": [
+            "Vail Village",
+            "Betty Ford Alpine Gardens",
+            "Covered Bridge",
+            "Lionshead Village"
+          ]
         }
       ]
     },
     {
       "date": "2026-01-20",
-      "day": "Tuesday",
-      "location": "Departure",
+      "dayName": "Tuesday",
+      "base": "Denver",
       "activities": [
         {
           "type": "travel",
-          "title": "Check-out and Departure",
-          "start_time": "11:00",
-          "end_time": "12:00",
-          "location": "Blue River / Breckenridge",
-          "description": "Leave Airbnb and drive toward Denver.",
-          "notes": "Allow buffer for weather."
+          "title": "Drive from Breckenridge to Denver",
+          "time": "10:00"
+        },
+        {
+          "type": "lunch",
+          "title": "Lunch in Downtown Denver",
+          "time": "12:00 - 13:15"
+        },
+        {
+          "type": "walk",
+          "title": "Downtown Walk",
+          "time": "13:30 - 14:30",
+          "pointsOfInterest": [
+            "Union Station",
+            "Larimer Square",
+            "16th Street Mall"
+          ]
+        },
+        {
+          "type": "flexible",
+          "title": "Optional Family Activities (choose one)",
+          "time": "15:00 - 17:30",
+          "optionalActivities": [
+            "Confluence Park (free)",
+            "Denver Zoo",
+            "Denver Museum of Nature & Science",
+            "Colorado State Capitol",
+            "Molly Brown House Museum",
+            "Wings Over the Rockies Air & Space Museum"
+          ]
+        },
+        {
+          "type": "sports",
+          "title": "NBA Game – Denver Nuggets vs LA Lakers",
+          "time": "18:30",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "dayName": "Wednesday",
+      "base": "Denver",
+      "activities": [
+        {
+          "type": "travel",
+          "title": "Hotel to Airport",
+          "time": "11:00"
+        },
+        {
+          "type": "flight",
+          "title": "Flight to Orlando",
+          "time": "14:00"
         }
       ]
     }
