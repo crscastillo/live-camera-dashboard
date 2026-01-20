@@ -9,26 +9,25 @@ import { useEffect, useRef } from 'react';
 interface Activity {
   type: string;
   title: string;
-  time?: string;
-  location?: string;
+  start_time?: string;
+  end_time?: string;
+  location: string;
+  description: string;
   notes?: string;
-  optional?: boolean;
-  pointsOfInterest?: string[];
-  optionalActivities?: string[];
 }
 
 interface Day {
   date: string;
-  dayName: string;
-  base: string;
+  day: string;
+  location: string;
   activities: Activity[];
 }
 
-interface Lodging {
-  from: string;
-  to: string;
+interface Base {
+  date?: string;
+  date_range?: string;
   location: string;
-  name: string;
+  lodging: string;
 }
 
 const activityColors: Record<string, string> = {
@@ -62,7 +61,7 @@ const activityIcons: Record<string, string> = {
 };
 
 export default function AgendaPage() {
-  const { trip, lodging, days } = agendaData;
+  const { trip, days } = agendaData;
   const { t, language } = useTranslation();
   const todayRef = useRef<HTMLDivElement>(null);
 
@@ -111,7 +110,7 @@ export default function AgendaPage() {
               <div className="flex items-center gap-2">
                 <span className="text-xl">📅</span>
                 <span className="font-medium">
-                  {getLocalizedDate(trip.startDate)} {language === 'es' ? 'a' : 'to'} {getLocalizedDate(trip.endDate)}
+                  {getLocalizedDate(trip.start_date)} {language === 'es' ? 'a' : 'to'} {getLocalizedDate(trip.end_date)}
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -122,13 +121,13 @@ export default function AgendaPage() {
             
             <div className="mt-6 space-y-3">
               <h3 className="font-semibold text-gray-700 text-sm uppercase tracking-wide">{t('accommodations')}</h3>
-              {lodging.map((lodge: Lodging, idx: number) => (
+              {trip.bases.map((base: Base, idx: number) => (
                 <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl">🏨</span>
                   <div>
-                    <p className="font-medium text-gray-800">{lodge.name}</p>
+                    <p className="font-medium text-gray-800">{base.lodging}</p>
                     <p className="text-sm text-gray-600">
-                      {lodge.location} • {lodge.from} to {lodge.to}
+                      {base.location} • {base.date || base.date_range}
                     </p>
                   </div>
                 </div>
@@ -156,7 +155,7 @@ export default function AgendaPage() {
                     </div>
                     <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
                       <span className="text-xl">📍</span>
-                      <span className="font-medium">{day.base}</span>
+                      <span className="font-medium">{day.location}</span>
                     </div>
                   </div>
                 </div>
@@ -179,21 +178,23 @@ export default function AgendaPage() {
                               <div className="absolute -left-3 md:-left-[26px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-gray-800 rounded-full border-2 border-white shadow-sm z-20" />
                               
                               <span className="text-3xl relative z-10">{activityIcons[activity.type] || '📌'}</span>
-                              {activity.time && (
+                              {activity.start_time && (
                                 <div className="text-center">
-                                  <p className="font-bold text-sm">{activity.time}</p>
+                                  <p className="font-bold text-sm">{activity.start_time}</p>
+                                  {activity.end_time && (
+                                    <p className="text-xs opacity-75">{activity.end_time}</p>
+                                  )}
                                 </div>
                               )}
                             </div>
 
                             <div className="flex-1 min-w-0">
                               <h3 className="font-bold text-lg mb-1">{activity.title}</h3>
-                              {activity.location && (
-                                <p className="text-sm font-medium mb-2 flex items-center gap-1">
-                                  <span>📍</span>
-                                  {activity.location}
-                                </p>
-                              )}
+                              <p className="text-sm font-medium mb-2 flex items-center gap-1">
+                                <span>📍</span>
+                                {activity.location}
+                              </p>
+                              <p className="text-sm mb-2">{activity.description}</p>
                               {activity.notes && (
                                 <div className="mt-3 p-3 bg-white/50 rounded-lg border border-current/20">
                                   <p className="text-xs font-medium flex items-start gap-2">
