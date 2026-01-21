@@ -1,106 +1,284 @@
-{
-  "date": "2026-01-20",
-  "day": "Tuesday",
-  "location": "Breckenridge → Denver",
-  "activities": [
-    {
-      "type": "travel",
-      "title": "Drive Breckenridge → Denver",
-      "start_time": "10:00",
-      "end_time": "12:30",
-      "location": "US-6 / I-70",
-      "description": "Mountain drive from Breckenridge to Denver.",
-      "notes": "Weather dependent; allow buffer time."
-    },
-    {
-      "type": "photo_stop",
-      "title": "Loveland Pass Summit (Photo Stop)",
-      "start_time": "11:15",
-      "end_time": "11:35",
-      "location": "Loveland Pass",
-      "description": "Scenic stop at the Continental Divide with panoramic mountain views.",
-      "notes": "Very cold and windy possible; short stop recommended."
-    },
-    {
-      "type": "photo_stop",
-      "title": "Clear Creek Canyon Scenic Pullouts",
-      "start_time": "12:00",
-      "end_time": "12:20",
-      "location": "Clear Creek Canyon",
-      "description": "River canyon views during descent toward Golden.",
-      "notes": "Quick roadside photo opportunities."
-    },
-    {
-      "type": "meal",
-      "title": "Lunch near Union Station",
-      "start_time": "13:00",
-      "end_time": "14:00",
-      "location": "Union Station, Denver",
-      "description": "Casual family-friendly lunch inside or near Union Station.",
-      "notes": "Multiple food hall options; restrooms available."
-    },
-    {
-      "type": "walk",
-      "title": "Union Station Interior & Plaza",
-      "start_time": "14:00",
-      "end_time": "14:20",
-      "location": "Union Station",
-      "description": "Historic train station, Great Hall, seasonal decorations.",
-      "notes": "Free; good photo spot."
-    },
-    {
-      "type": "walk",
-      "title": "LoDo Historic District Walk",
-      "start_time": "14:20",
-      "end_time": "14:50",
-      "location": "Lower Downtown (LoDo)",
-      "description": "Walk past historic brick buildings, Wynkoop Street, and shops.",
-      "notes": "Flat and walkable; stroller friendly."
-    },
-    {
-      "type": "walk",
-      "title": "16th Street Mall Pedestrian Area",
-      "start_time": "15:00",
-      "end_time": "15:30",
-      "location": "16th Street Mall",
-      "description": "Pedestrian mall with street art, performers, and shops.",
-      "notes": "Free MallRide shuttle available."
-    },
-    {
-      "type": "flexible",
-      "title": "Optional Family Activity (choose one)",
-      "start_time": "15:00",
-      "end_time": "17:30",
-      "location": "Denver",
-      "description": "Choose one activity depending on interest and energy.",
-      "notes": "All options align with this same time window.",
-      "options": [
-        "Confluence Park (free riverfront walk and playground)",
-        "Colorado State Capitol (free interior tour if open)",
-        "Denver Zoo",
-        "Denver Museum of Nature & Science",
-        "Molly Brown House Museum",
-        "Wings Over the Rockies Air & Space Museum"
-      ]
-    },
-    {
-      "type": "sports",
-      "title": "NBA Game – Denver Nuggets vs LA Lakers",
-      "start_time": "18:30",
-      "end_time": "21:00",
-      "location": "Ball Arena",
-      "description": "Optional evening NBA game.",
-      "notes": "Allow 20–30 min drive from downtown; parking or rideshare.",
-      "optional": true
-    },
-    {
-      "type": "lodging",
-      "title": "Hotel Check-in",
-      "start_time": "21:30",
-      "end_time": "22:00",
-      "location": "La Quinta Inn & Suites Denver Airport (DIA)",
-      "description": "Overnight near the airport.",
-      "notes": "Prepare luggage for next-day flight."
-    }
-  ]
-}
+[
+  {
+    "date": "2026-01-20",
+    "day": "Tuesday",
+    "location": "Breckenridge → Denver",
+    "activities": [
+      {
+        "type": "travel",
+        "title": "Drive Breckenridge → Denver",
+        "start_time": "10:00",
+        "end_time": "12:30",
+        "location": "US-6 / I-70",
+        "description": "Mountain drive from Breckenridge to Denver.",
+        "notes": "Weather dependent; allow buffer time."
+      },
+      {
+        "type": "photo_stop",
+        "title": "Loveland Pass Summit (Photo Stop)",
+        "start_time": "11:15",
+        "end_time": "11:35",
+        "location": "Loveland Pass",
+        "description": "Scenic stop at the Continental Divide with panoramic mountain views.",
+        "notes": "Very cold and windy possible; short stop recommended."
+      },
+      {
+        "type": "photo_stop",
+        "title": "Clear Creek Canyon Scenic Pullouts",
+        "start_time": "12:00",
+        "end_time": "12:20",
+        "location": "Clear Creek Canyon",
+        "description": "River canyon views during descent toward Golden.",
+        "notes": "Quick roadside photo opportunities."
+      },
+      {
+        "type": "meal",
+        "title": "Lunch near Union Station",
+        "start_time": "13:00",
+        "end_time": "14:00",
+        "location": "Union Station, Denver",
+        "description": "Casual family-friendly lunch inside or near Union Station.",
+        "notes": "Multiple food hall options; restrooms available."
+      },
+      {
+        "type": "walk",
+        "title": "Union Station Interior & Plaza",
+        "start_time": "14:00",
+        "end_time": "14:20",
+        "location": "Union Station",
+        "description": "Historic train station, Great Hall, seasonal decorations.",
+        "notes": "Free; good photo spot."
+      },
+      {
+        "type": "walk",
+        "title": "LoDo Historic District Walk",
+        "start_time": "14:20",
+        "end_time": "14:50",
+        "location": "Lower Downtown (LoDo)",
+        "description": "Walk past historic brick buildings, Wynkoop Street, and shops.",
+        "notes": "Flat and walkable; stroller friendly."
+      },
+      {
+        "type": "walk",
+        "title": "16th Street Mall Pedestrian Area",
+        "start_time": "15:00",
+        "end_time": "15:30",
+        "location": "16th Street Mall",
+        "description": "Pedestrian mall with street art, performers, and shops.",
+        "notes": "Free MallRide shuttle available."
+      },
+      {
+        "type": "flexible",
+        "title": "Optional Family Activity (choose one)",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "location": "Denver",
+        "description": "Choose one activity depending on interest and energy.",
+        "notes": "All options align with this same time window.",
+        "options": [
+          "Confluence Park (free riverfront walk and playground)",
+          "Colorado State Capitol (free interior tour if open)",
+          "Denver Zoo",
+          "Denver Museum of Nature & Science",
+          "Molly Brown House Museum",
+          "Wings Over the Rockies Air & Space Museum"
+        ]
+      },
+      {
+        "type": "sports",
+        "title": "NBA Game – Denver Nuggets vs LA Lakers",
+        "start_time": "18:30",
+        "end_time": "21:00",
+        "location": "Ball Arena",
+        "description": "Optional evening NBA game.",
+        "notes": "Allow 20–30 min drive from downtown; parking or rideshare.",
+        "optional": true
+      },
+      {
+        "type": "lodging",
+        "title": "Hotel Check-in",
+        "start_time": "21:30",
+        "end_time": "22:00",
+        "location": "La Quinta Inn & Suites Denver Airport (DIA)",
+        "description": "Overnight near the airport.",
+        "notes": "Prepare luggage for next-day flight."
+      }
+    ]
+  },
+
+  {
+    "date": "2026-01-21",
+    "day": "Wednesday",
+    "location": "Denver → Orlando",
+    "activities": [
+      {
+        "type": "travel",
+        "title": "Hotel → Denver International Airport",
+        "start_time": "11:00",
+        "end_time": "11:30",
+        "location": "DIA",
+        "description": "Drive from hotel to airport.",
+        "notes": "Return rental car and check luggage."
+      },
+      {
+        "type": "flight",
+        "title": "Flight Denver → Orlando",
+        "start_time": "14:00",
+        "end_time": "19:00",
+        "location": "DEN → MCO",
+        "description": "Afternoon flight to Orlando.",
+        "notes": "Non-stop if available."
+      },
+      {
+        "type": "transport",
+        "title": "Car Rental Pickup",
+        "start_time": "19:30",
+        "end_time": "20:00",
+        "location": "MCO",
+        "description": "Pick up rental car.",
+        "notes": "Company: Budget."
+      },
+      {
+        "type": "shopping",
+        "title": "Walmart Essentials Stop",
+        "start_time": "20:30",
+        "end_time": "21:15",
+        "location": "Walmart Supercenter",
+        "description": "Groceries, water, snacks.",
+        "notes": "Quick stop."
+      },
+      {
+        "type": "lodging",
+        "title": "Airbnb Check-in",
+        "start_time": "22:00",
+        "end_time": "22:30",
+        "location": "Orlando Airbnb",
+        "description": "Arrival and rest.",
+        "notes": "Light dinner."
+      }
+    ]
+  },
+
+  {
+    "date": "2026-01-22",
+    "day": "Thursday",
+    "location": "Orlando",
+    "activities": [
+      {
+        "type": "shopping",
+        "title": "Discount Stores Shopping",
+        "start_time": "10:00",
+        "end_time": "13:30",
+        "location": "Ross / Burlington / Marshalls",
+        "description": "Morning shopping.",
+        "notes": "Choose 1–2 stores to avoid fatigue."
+      },
+      {
+        "type": "meal",
+        "title": "Lunch",
+        "start_time": "13:30",
+        "end_time": "14:00",
+        "location": "Near shopping area",
+        "description": "Quick lunch.",
+        "notes": ""
+      },
+      {
+        "type": "attraction",
+        "title": "Disney Springs",
+        "start_time": "14:00",
+        "end_time": "20:00",
+        "location": "Disney Springs",
+        "description": "Shopping, walking, and dinner.",
+        "notes": "Free entry; family friendly."
+      }
+    ]
+  },
+
+  {
+    "date": "2026-01-23",
+    "day": "Friday",
+    "location": "Orlando",
+    "activities": [
+      {
+        "type": "flexible",
+        "title": "Choose Activity",
+        "start_time": "10:00",
+        "end_time": "17:00",
+        "location": "Orlando Area",
+        "description": "Select one main activity for the day.",
+        "notes": "Do not combine all options.",
+        "options": [
+          "Orlando International Premium Outlets",
+          "Disney Park (Magic Kingdom or Hollywood Studios)",
+          "Cocoa Beach (1h drive)"
+        ]
+      }
+    ]
+  },
+
+  {
+    "date": "2026-01-24",
+    "day": "Saturday",
+    "location": "Orlando",
+    "activities": [
+      {
+        "type": "flexible",
+        "title": "Choose Activity",
+        "start_time": "10:00",
+        "end_time": "17:00",
+        "location": "Orlando / Space Coast",
+        "description": "Flexible planning day.",
+        "notes": "",
+        "options": [
+          "Vineland Premium Outlets",
+          "Disney Park",
+          "Kennedy Space Center",
+          "Cocoa Beach"
+        ]
+      }
+    ]
+  },
+
+  {
+    "date": "2026-01-25",
+    "day": "Sunday",
+    "location": "Orlando",
+    "activities": [
+      {
+        "type": "relax",
+        "title": "Easy Morning / Rest Day",
+        "start_time": "10:00",
+        "end_time": "13:00",
+        "location": "Airbnb area",
+        "description": "Rest, pool, or light shopping.",
+        "notes": ""
+      },
+      {
+        "type": "prep",
+        "title": "Prepare for Universal",
+        "start_time": "16:00",
+        "end_time": "20:00",
+        "location": "Airbnb",
+        "description": "Early dinner and prepare bags.",
+        "notes": "Early bedtime recommended."
+      }
+    ]
+  },
+
+  {
+    "date": "2026-01-26",
+    "day": "Monday",
+    "location": "Orlando",
+    "activities": [
+      {
+        "type": "attraction",
+        "title": "Universal Epic Universe",
+        "start_time": "09:30",
+        "end_time": "18:00",
+        "location": "Universal Orlando Resort",
+        "description": "Full-day theme park visit.",
+        "notes": "Long walking day; arrive early."
+      }
+    ]
+  }
+]
